@@ -35,6 +35,7 @@ int main()
   waitKey(0);
   return 0;
 }
+
 Download a color image from Google. I downloaded Lena image by just searching for lena.jpg 
 
 Save the image inside your project location.
