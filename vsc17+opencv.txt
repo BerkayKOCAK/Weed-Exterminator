@@ -1,0 +1,59 @@
+Step 1: Install Visual Studio 2017
+Download the Visual Studio Community, which is a free fully featured IDE. A network installer of only a couple of megabytes, can be downloaded. Running the installer will download typically 2-3 GB of files; the installation will be self explanatory. Just click ‘Next’ and ‘Next’ with express settings.
+
+Step 2: Install OpenCV
+Download latest OpenCV package for Windows from opencv official page. It will be an executable file anywhere between 100 to 200 MB. Don’t worry, it’s just an extracter. I would suggest you to extract OpenCV package in your root directory such as C: drive.
+
+Step 3: Include OpenCV to system path
+Go to Advanced System Settings > Environment Variables >System Variables > Path.
+
+Click on ‘Edit’. Now, click ‘New’ to add new environment variable.
+
+Copy and paste the path of bin folder inside OpenCV package. The path will look similar to C:\opencv\build\x64\vc14\bin.
+
+Press OK and exit the environment variable dialog by clicking OK again.
+
+Step 4: Create a new empty console application
+Open up Visual Studio. Create a new project as a Win32 Console application using Visual C++. Make the Empty project and Finish.
+
+Add a new .cpp file inside the Source Files. This will open up the newly created cpp file in the editor.
+
+Type in the following code inside the editor and save the source file. You may copy paste the entire code from below.
+
+#include<opencv2/opencv.hpp>
+#include<iostream>
+using namespace std;
+using namespace cv;
+int main()
+{
+  Mat img = imread("lena.jpg");
+  namedWindow("image", WINDOW_NORMAL);
+  imshow("image", img);
+  waitKey(0);
+  return 0;
+}
+Download a color image from Google. I downloaded Lena image by just searching for lena.jpg 
+
+Save the image inside your project location.
+
+Step 5: Include OpenCV in Visual Studio
+Till now, the opencv c++ functions & variables are not identifiable by visual studio. This is due to the fact that we haven’t linked opencv with visual studio.
+
+Before proceeding, make sure solution platform has been chosen correctly. I am using x64 version hence, I toggled the Debug environment to x64.
+
+Inside Properties of the project,
+
+then C/C++ > General. Copy the path to include folder of opencv and paste it inside Additional Include Directories. The path will look similar to C:\opencv\build\include. Then, click Apply.
+
+Go to linker > General. Copy the path to folder containing opencv  lib files and paste it inside Additional Library Directories. The path will look similar to C:\opencv\build\x64\vc14\lib. Then, click Apply.
+
+Go to Input. Edit Additional Dependencies and paste the .lib file’s name. Choose the .lib file according to your configuration. For debug mode, the file ends with ‘d’, e. g., opencv_world341d.lib.. Then, click Apply.
+
+Exit the Properties by clicking OK.
+
+Note: make sure you edit the properties, using Configuration and Platform same as in which the source file is saved.
+
+Step 6: Test the code
+Build the code by clicking Build Solution or just pressing Ctrl+Shift+B on keyboard. This should end up with output “Build Succeeded”.
+
+Run the Local Windows Debugger. This should display the image on a new screen. Making any keypress will make the make window close.  This signifies that you made success to install OpenCV C++ with Visual Studio on your Windows PC.
