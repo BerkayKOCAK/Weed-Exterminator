@@ -12,7 +12,7 @@ Go to Advanced System Settings > Environment Variables >System Variables > Path.
 
 Click on ‘Edit’. Now, click ‘New’ to add new environment variable.
 
-Copy and paste the path of bin folder inside OpenCV package. The path will look similar to C:\opencv\build\x64\vc14\bin.
+Copy and paste the path of bin folder inside OpenCV package. The path will look similar to C:\opencv\build\x64\vc15\bin.
 
 Press OK and exit the environment variable dialog by clicking OK again.
 
@@ -48,9 +48,9 @@ Inside Properties of the project,
 
 then C/C++ > General. Copy the path to include folder of opencv and paste it inside Additional Include Directories. The path will look similar to C:\opencv\build\include. Then, click Apply.
 
-Go to linker > General. Copy the path to folder containing opencv  lib files and paste it inside Additional Library Directories. The path will look similar to C:\opencv\build\x64\vc14\lib. Then, click Apply.
+Go to linker > General. Copy the path to folder containing opencv  lib files and paste it inside Additional Library Directories. The path will look similar to C:\opencv\build\x64\vc15\lib. Then, click Apply.
 
-Go to Input. Edit Additional Dependencies and paste the .lib file’s name. Choose the .lib file according to your configuration. For debug mode, the file ends with ‘d’, e. g., opencv_world341d.lib.. Then, click Apply.
+Go to Input. Edit Additional Dependencies and paste the .lib file’s name. Choose the .lib file according to your configuration. For debug mode, the file ends with ‘d’, e. g., opencv_world341d.lib.. Then, click Apply.(Use debug one)
 
 Exit the Properties by clicking OK.
 
