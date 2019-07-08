@@ -1,0 +1,7 @@
+https://plantvision.unl.edu/dataset (biggest , download first and last one)
+https://www.plant-image-analysis.org/dataset/leaf-phenotyping-dataset
+https://www.plant-image-analysis.org/dataset/leaf-annotation
+https://www.kaggle.com/vbookshelf/v2-plant-seedlings-dataset	PERFECT
+https://www.kaggle.com/nikkonst/plant-seedlings-with-cnn-and-image-processing/data
+https://github.com/AlexOlsen/DeepWeeds
+https://github.com/cwfid/dataset/releases	CARROT
