@@ -1,5 +1,6 @@
 
 For windows 7 and newer.
+For c++.
 
 Step 1: Install Visual Studio 2017
 Download the Visual Studio Community, which is a free fully featured IDE. A network installer of only a couple of megabytes, can be downloaded. Running the installer will download typically 2-3 GB of files; the installation will be self explanatory. Just click ‘Next’ and ‘Next’ with express settings.
