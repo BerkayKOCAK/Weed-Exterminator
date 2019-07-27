@@ -2,6 +2,8 @@ import cv2
 import argparse
 import numpy as np
 
+#INCLUDES ALL OTHER FILES
+
 # handle command line arguments
 ap = argparse.ArgumentParser()
 ap.add_argument('-i', '--image', required=True,help = 'path to input image');
