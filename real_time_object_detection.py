@@ -11,6 +11,7 @@ import time
 import cv2
 
 # construct the argument parse and parse the arguments
+"""
 ap = argparse.ArgumentParser()
 ap.add_argument("-p", "--prototxt", required=True,
 	help="path to Caffe 'deploy' prototxt file")
@@ -19,19 +20,30 @@ ap.add_argument("-m", "--model", required=True,
 ap.add_argument("-c", "--confidence", type=float, default=0.2,
 	help="minimum probability to filter weak detections")
 args = vars(ap.parse_args())
+"""
+ap.add_argument('-c', '--config', required=True,help = 'path to yolo config file');
+ap.add_argument('-w', '--weights', required=True, help = 'path to yolo pre-trained weights');
+ap.add_argument('-cl', '--classes', required=True,help = 'path to text file containing class names');
 
 # initialize the list of class labels MobileNet SSD was trained to
 # detect, then generate a set of bounding box colors for each class
+"""
 CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
 	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
 	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
 	"sofa", "train", "tvmonitor"]
-COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
+"""
+
+classes = None
+
+with open(args.classes, 'r') as f:
+    classes = [line.strip() for line in f.readlines()]
+COLORS = np.random.uniform(0, 255, size=(len(classes), 3))
 
 # load our serialized model from disk
-print("[INFO] loading model...")
-net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
-
+print("[INFO] loading model...");
+#net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
+net = cv2.dnn.readNet(args.weights, args.config);
 # initialize the video stream, allow the cammera sensor to warmup,
 # and initialize the FPS counter
 print("[INFO] starting video stream...")
