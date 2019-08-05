@@ -1,1 +1,8 @@
-.vscode
+*.vscode
+*.cfg
+*.names
+*.avi
+*.caffemodel
+*.weights
+*.cfg
+*.names
